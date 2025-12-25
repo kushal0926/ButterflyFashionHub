@@ -13,7 +13,6 @@ app.use("/api/v1/order", orderRoutes);
 app.use("api/v1/login", adminRoute);
 app.use("api/v1/product", productRoute);
 
-
 app.get("/", (req: Request, res: Response) => {
   res.send("Building the backend for the e-commerce app...");
 });
