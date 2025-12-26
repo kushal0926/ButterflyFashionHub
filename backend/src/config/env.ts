@@ -10,3 +10,5 @@ export const NODE_ENV: string = process.env.NODE_ENV || "development";
 export const PORT: string = process.env.PORT || "5500";
 export const SERVER_URL: string = process.env.SERVER_URL || "";
 export const MONGODB_URI: string = process.env.MONGODB_URI || "";
+export const JWT_SECRET: string = process.env.JWT_SECRET || "";
+export const JWT_EXPIRES_IN: string = process.env.JWT_EXPIRES_IN || "";

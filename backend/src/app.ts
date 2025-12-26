@@ -5,13 +5,20 @@ import orderRoutes from "./routes/order.routes.ts";
 import adminRoute from "./routes/admin.routes.ts";
 import productRoute from "./routes/product.routes.ts";
 import connectToDatabase from "./database/mongodb.ts";
+import cookieParser from "cookie-parser";
+import errorMiddlware from "./middleware/error.middleware.ts";
 
 const app: Express = express();
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser())
 // routes
 app.use("/api/v1/order", orderRoutes);
 app.use("api/v1/login", adminRoute);
 app.use("api/v1/product", productRoute);
+app.use(errorMiddlware);
+
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Building the backend for the e-commerce app...");
